@@ -6,17 +6,15 @@
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:10:58 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/10/24 11:44:40 by ilarhrib         ###   ########.fr       */
+/*   Updated: 2024/11/05 08:48:33 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int ch)
+int	ft_tolower(int ch)
 {
-    if (ch >= 'A' && ch <= 'Z')
-    {
-        return (ch + 32);
-    }
-    return (ch);
+	if (ch >= 'A' && ch <= 'Z')
+		return (ch + 32);
+	return (ch);
 }

@@ -6,17 +6,17 @@
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:16:46 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/10/23 10:13:12 by ilarhrib         ###   ########.fr       */
+/*   Updated: 2024/10/27 11:17:00 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int ch)
+int	ft_isalpha(int ch)
 {
-if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
-    {
-        return (1);
-    }
-    return (0);
+	if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+	{
+		return (1);
+	}
+	return (0);
 }

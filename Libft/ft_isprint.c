@@ -6,17 +6,15 @@
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:37:02 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/10/22 11:46:02 by ilarhrib         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:56:16 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int ch)
+int	ft_isprint(int ch)
 {
-    if (ch >= 32 && ch <= 126)
-    {
-        return (1);
-    }
-    return (0);
+	if (ch >= 32 && ch <= 126)
+		return (1);
+	return (0);
 }

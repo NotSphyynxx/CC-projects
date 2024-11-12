@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 13:05:22 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/11/10 17:36:18 by ilarhrib         ###   ########.fr       */
+/*   Created: 2024/10/28 17:02:53 by ilarhrib          #+#    #+#             */
+/*   Updated: 2024/11/10 17:35:54 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t length)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	t_list	*nl;
+	t_list	*nn;
 
-	if (!dest && !src)
+	nl = NULL;
+	if (!lst || !f || !del)
 		return (NULL);
-	s = (const unsigned char *)src;
-	d = (unsigned char *)dest;
-	if (d > s && d < s + length)
+	while (lst)
 	{
-		while (length--)
-			d[length] = s[length];
-	}
-	else
-	{
-		i = 0;
-		while (i < length)
+		nn = ft_lstnew(f(lst->content));
+		if (!nn)
 		{
-			d[i] = s[i];
-			i++;
+			ft_lstclear(&nl, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&nl, nn);
+		lst = lst->next;
 	}
-	return (dest);
+	return (nl);
 }

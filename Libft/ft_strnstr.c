@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 13:05:22 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/11/10 17:36:18 by ilarhrib         ###   ########.fr       */
+/*   Created: 2024/10/24 21:30:26 by ilarhrib          #+#    #+#             */
+/*   Updated: 2024/11/10 17:50:22 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t length)
+char	*ft_strnstr(const char *hs, const char *n, size_t len)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
+	size_t	j;
+	size_t	nlen;
 
-	if (!dest && !src)
+	nlen = ft_strlen(n);
+	if (!hs && len == 0)
 		return (NULL);
-	s = (const unsigned char *)src;
-	d = (unsigned char *)dest;
-	if (d > s && d < s + length)
+	if (nlen == 0)
+		return ((char *)hs);
+	if (len == 0)
+		return (NULL);
+	i = 0;
+	while (hs[i] != '\0' && i + nlen <= len)
 	{
-		while (length--)
-			d[length] = s[length];
+		j = 0;
+		while (j < nlen && hs[i + j] == n[j] && (i + j) < len)
+			j++;
+		if (j == nlen)
+			return ((char *)(hs + i));
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < length)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dest);
+	return (NULL);
 }
