@@ -20,11 +20,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-int main()
-{
-	t_list **lst = NULL;
-	t_list *new = ft_lstnew("ismail");
-	ft_lstadd_front(lst, new);
-	printf("%s\n", (*lst)->content);
-	return 0;
-}
