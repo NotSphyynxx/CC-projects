@@ -6,7 +6,7 @@
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:16:02 by ilarhrib          #+#    #+#             */
-/*   Updated: 2024/11/23 21:18:46 by ilarhrib         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:55:55 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_putnbr(int nb)
 	len = 0;
 	if (nb == 0)
 		len += ft_putchar(0 + 48);
+	if (nb == -2147483648)
+		return (write(1, "-2147483648", 11));
 	else if (nb < 0)
 	{
 		len += ft_putchar('-');

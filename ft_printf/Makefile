@@ -6,7 +6,7 @@
 #    By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 19:16:33 by ilarhrib          #+#    #+#              #
-#    Updated: 2024/11/23 19:16:36 by ilarhrib         ###   ########.fr        #
+#    Updated: 2024/11/25 11:23:21 by ilarhrib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,6 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 
-re : fclean $(name)
+re : fclean $(NAME)
 
 .PHONY : clean
