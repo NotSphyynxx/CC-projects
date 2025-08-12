@@ -2,9 +2,9 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <unistd.h>
-#include <iomanip>
 #include <iostream>
 #include "contacts.hpp"
 
@@ -21,14 +21,9 @@ class Phonebook{
 		void 		init_indexes();
 		Contacts	*get_contacts();
 		int			get_s_index();
-		void print_contacts() {
-			printf("%d\n", this->c_index);
-			for (int i = 0; i < s_index; i++) {
-				this->contacts[i].print_contact();
-			}
-		}
 };
 
 void	add_contact(Phonebook& phonebook);
+int		is_empty(std::string input);
 
 #endif

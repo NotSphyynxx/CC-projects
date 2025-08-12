@@ -4,28 +4,51 @@ void	add_contact(Phonebook& phonebook)
 {
 	std::string input;
 	while (1){
-		std::cout << "Please enter ur first name: ";
-		getline(std::cin, input);
-		phonebook.get_contacts()[phonebook.get_index()].set_name(input);
-		std::cout << "Please enter ur last name: ";
-		getline(std::cin, input);
-		phonebook.get_contacts()[phonebook.get_index()].set_last_name(input);
-		std::cout << "Please enter ur nickname: ";
-		getline(std::cin, input);
-		phonebook.get_contacts()[phonebook.get_index()].set_nickname(input);
-		std::cout << "Please enter ur Phone number: ";
-		getline(std::cin, input);
-		phonebook.get_contacts()[phonebook.get_index()].set_number(input);
-		std::cout << "Please enter ur darkest secret: ";
-		getline(std::cin, input);
-		phonebook.get_contacts()[phonebook.get_index()].set_darkest_secret(input);
+		f_name_label:
+			std::cout << "Please enter ur first name: ";
+			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
+			if (is_empty(input))
+				goto f_name_label;
+			phonebook.get_contacts()[phonebook.get_index()].set_name(input);
+		l_name_label:
+			std::cout << "Please enter ur last name: ";
+			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
+			if (is_empty(input))
+				goto l_name_label;
+			phonebook.get_contacts()[phonebook.get_index()].set_last_name(input);
+		nick_name_label:
+			std::cout << "Please enter ur nickname: ";
+			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
+			if (is_empty(input))
+				goto nick_name_label;
+			phonebook.get_contacts()[phonebook.get_index()].set_nickname(input);
+		pb_name_label:
+			std::cout << "Please enter ur Phone number: ";
+			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
+			if (is_empty(input))
+				goto pb_name_label;
+			phonebook.get_contacts()[phonebook.get_index()].set_number(input);
+		ds_name_label:
+			std::cout << "Please enter ur darkest secret: ";
+			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
+			if (is_empty(input))
+				goto ds_name_label;
+			phonebook.get_contacts()[phonebook.get_index()].set_darkest_secret(input);
 		break ;
 	}
 	std::cout << "Contact added successfully!\n";
 	phonebook.increment_indexes();
 }
-
-#include <iomanip>
 
 void	search_contacts(Phonebook& phonebook){
 
@@ -43,7 +66,7 @@ void	search_contacts(Phonebook& phonebook){
 		<< "|" << std::setw(10) << "First Name"
 		<< "|" << std::setw(10) << "Last Name"
 		<< "|" << std::setw(10) << "Nickname" << std::endl;
-		std::cout << std::setw(10) << phonebook.get_s_index()
+		std::cout << std::setw(10) << (i + 1)
 		<< "|" << std::setw(10) << (phonebook.get_contacts())[i].get_name()
 		<< "|" << std::setw(10) << (phonebook.get_contacts())[i].get_last_name()
 		<< "|" << std::setw(10) << (phonebook.get_contacts())[i].get_nickname()
@@ -54,6 +77,8 @@ void	search_contacts(Phonebook& phonebook){
 
 	std::cout << "\nPlease enter the contact index to fully see it: ";
 	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
 	if (input == "1"){
 		(phonebook.get_contacts())[0].print_contact();
 	}
@@ -89,6 +114,8 @@ int main(){
 	std::cout << "\n_____________| WELCOME TO PHONEBOOKS.com |____________\n\n";
 	while (1)
 	{
+		if (std::cin.eof())
+			return (0);
 		std::cout << "\n________| YOU MAY ADD, SEARCH A CONTACT OR EXIT |________\n";
 		std::cout << "\n->";
 		std::getline(std::cin, input);
@@ -96,10 +123,8 @@ int main(){
 			return (0);
 		if (input == "ADD")
 			add_contact(phonebook);
-		else if (input == "SEARCH"){
+		else if (input == "SEARCH")
 			search_contacts(phonebook);
-			//phonebook.print_contacts();
-		}
 		else if (input == "EXIT"){
 			break ;
 		}

@@ -26,7 +26,8 @@ Contacts *Phonebook::get_contacts(){
 
 void Phonebook::increment_indexes(){
 	this->c_index = (this->c_index + 1) % 8;
-	this->s_index += 1;
+	if (s_index < 8)
+		this->s_index++;
 }
 
 void	Phonebook::init_indexes(){
@@ -60,4 +61,29 @@ std::string Contacts::get_darkest_secret(){
 
 std::string Contacts::get_phone_number(){
 	return (phone_number);
+}
+
+int	is_empty(std::string input)
+{
+	if (input.empty()){
+		std::cout << "Invalid arg Retry !" << std::endl;
+		return (1);
+	}
+	return (0);
+}
+
+
+void Contacts::print_contact()
+{
+	if (get_name().empty() || get_last_name().empty() || get_nickname().empty()
+	|| get_phone_number().empty() || get_darkest_secret().empty()){
+		std::cout << "Contact Empty !" << std::endl;
+		return ;
+	}
+	std::cout << "Fisrt Name: " << get_name() << '\n';
+	std::cout << "Last Name: " << get_last_name() << '\n';
+	std::cout << "Nickname: " << get_nickname() << '\n';
+	std::cout << "Phone Number: " << get_phone_number() << '\n';
+	std::cout << "Darkest Secret: " << get_darkest_secret() << '\n';
+
 }
