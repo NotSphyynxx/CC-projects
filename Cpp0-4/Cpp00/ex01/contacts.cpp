@@ -87,3 +87,13 @@ void Contacts::print_contact()
 	std::cout << "Darkest Secret: " << get_darkest_secret() << '\n';
 
 }
+
+int	parse_num(std::string input){
+	for(int i = 0;input[i];i++){
+		if (!(input[i] >= '0' && input[i] <= '9')){
+			std::cout << "Phone number includes digits only !\n";
+			return (1);
+		}
+	}
+	return (0);
+}

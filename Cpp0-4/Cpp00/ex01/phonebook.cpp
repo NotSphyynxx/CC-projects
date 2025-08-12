@@ -33,7 +33,7 @@ void	add_contact(Phonebook& phonebook)
 			getline(std::cin, input);
 			if (std::cin.eof())
 				return ;
-			if (is_empty(input))
+			if (is_empty(input) || parse_num(input))
 				goto pb_name_label;
 			phonebook.get_contacts()[phonebook.get_index()].set_number(input);
 		ds_name_label:
