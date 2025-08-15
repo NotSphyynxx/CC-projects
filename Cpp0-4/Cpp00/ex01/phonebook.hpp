@@ -8,7 +8,7 @@
 #include <iostream>
 #include "contacts.hpp"
 
-class Phonebook{
+class Phonebook {
 	private:
 		int	c_index;
 		Contacts contacts[8];
@@ -25,6 +25,5 @@ class Phonebook{
 
 void	add_contact(Phonebook& phonebook);
 int		is_empty(std::string input);
-int		parse_num(std::string input);
 
 #endif

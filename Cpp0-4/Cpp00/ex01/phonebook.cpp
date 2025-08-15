@@ -28,15 +28,15 @@ void	add_contact(Phonebook& phonebook)
 			if (is_empty(input))
 				goto nick_name_label;
 			phonebook.get_contacts()[phonebook.get_index()].set_nickname(input);
-		pb_name_label:
+		pb_name_label :
 			std::cout << "Please enter ur Phone number: ";
 			getline(std::cin, input);
 			if (std::cin.eof())
 				return ;
-			if (is_empty(input) || parse_num(input))
+			if (is_empty(input))
 				goto pb_name_label;
 			phonebook.get_contacts()[phonebook.get_index()].set_number(input);
-		ds_name_label:
+		ds_name_label :
 			std::cout << "Please enter ur darkest secret: ";
 			getline(std::cin, input);
 			if (std::cin.eof())

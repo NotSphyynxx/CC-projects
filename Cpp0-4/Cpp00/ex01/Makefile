@@ -6,7 +6,7 @@ SRC = phonebook.cpp contacts.cpp
 
 HF = phonebook.hpp contacts.hpp
 
-CPP_FLAGS = -std=c++98 #-Wall -Wextra -Werror 
+CPP_FLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 OBJ = $(SRC:.cpp=.opp)
 
