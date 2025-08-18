@@ -1,8 +1,8 @@
 CPPC = c++
 
-NAME = Zombie
+NAME = ZombieHorde
 
-SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRC = Zombie.cpp main.cpp ZombieHorde.cpp
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
