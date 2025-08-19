@@ -37,12 +37,8 @@ Account::Account(int dep){
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += dep;
 	Account::_nbAccounts++;
-	// this->_totalNbDeposits++; only in withdrawals
-	// this->_totalNbWithdrawals++; only in make withdrawal
 		this->_accountIndex = (getNbAccounts() - 1) % 8;
-	// this->_nbDeposits++; only in make deposit 
 	this->_amount = dep;
-	// this->_nbWithdrawals++; only in withdrawals
 	Account::_displayTimestamp();
 	std::cout << " index:"<< this->_accountIndex
 	<< ";amount:" << checkAmount() << ";created"
@@ -104,7 +100,3 @@ bool	Account::makeWithdrawal(int withdrawal){
 	this->_amount -= withdrawal;
 	return (true);
 }
-
-// int main(){
-// 	Account acc;
-// }

@@ -2,7 +2,7 @@
 
 Zombie::Zombie(){
 	std::cout << this->z_name
-	<< "New Zombie Spawning...\n" << std::endl;
+	<< "New Zombie Spawning..." << std::endl;
 }
 
 Zombie::~Zombie(){

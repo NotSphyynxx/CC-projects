@@ -1,14 +1,14 @@
 CPPC = c++
 
-NAME = ZombieHorde
+NAME = prog
 
-SRC = Zombie.cpp main.cpp zombieHorde.cpp
+SRC = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRC:.cpp=.opp)
 
-HF = Zombie.hpp
+HF = Weapon.hpp HumanA.hpp  HumanB.hpp
 
 all : $(NAME)
 
