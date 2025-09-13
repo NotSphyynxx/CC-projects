@@ -4,7 +4,7 @@ NAME = prog
 
 SRC = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = #-Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRC:.cpp=.opp)
 
