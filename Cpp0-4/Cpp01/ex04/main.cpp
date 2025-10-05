@@ -40,7 +40,6 @@ int main(int ac, char **av){
         else
             o << std::endl;
     }
-
     o.close();
     f.close();
 }
