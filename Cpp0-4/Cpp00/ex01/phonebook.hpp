@@ -13,7 +13,6 @@ class Phonebook {
 		int	c_index;
 		Contacts contacts[8];
 		int s_index;
-		int contact_count;
 
 	public:
 		void 		increment_indexes();
