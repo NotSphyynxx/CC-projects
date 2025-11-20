@@ -2,9 +2,9 @@ CPPC = c++
 
 NAME = Animal
 
-SRC = Animal.cpp Dog.cpp Cat.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = Animal.cpp Dog.cpp Cat.cpp Brain.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 
-HF = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+HF = Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 
 CPP_FLAGS = -std=c++98 -Wall -Wextra -Werror 
 
