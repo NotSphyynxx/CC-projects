@@ -6,7 +6,7 @@
 /*   By: ilarhrib <ilarhrib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:16:12 by ilarhrib          #+#    #+#             */
-/*   Updated: 2025/08/05 16:35:09 by ilarhrib         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:43:01 by ilarhrib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int ac, char **av)
 					std::cout << av[i][j];
 			}
 		}
+		std::cout << std::endl;
 	}
 	return (0);
 }
