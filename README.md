@@ -71,4 +71,4 @@ Please do not copy-paste code from this repository. The 42 pedagogy is based on 
 
 **NotSphyynxx**
 
-* [LinkedIn]([https://www.linkedin.com/in/your-linkedin](https://www.linkedin.com/in/ismail-larhrib-b5291932a/))
+* [LinkedIn](https://www.linkedin.com/in/ismail-larhrib-b5291932a/)
