@@ -7,7 +7,7 @@
 
 int main()
 {
-	// const Animal* o = new Animal();
+	// const Animal* o = new Animal(); Will produce error
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	std::cout << "=======================================\n";
