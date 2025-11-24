@@ -5,6 +5,7 @@ Character::Character(){
     name = "Default";
     for (int i = 0;i < 4;i++){
         inv[i] = NULL;
+        depot[i] = NULL;
     }
 }
 
@@ -62,12 +63,11 @@ std::string const& Character::getName() const {
 
 void Character::equip(AMateria* m){
     for (int i = 0;i < 4;i++){
-        for (int j = 0;i < 4;i++){
+        for (int j = 0;j < 4;j++){
             if (inv[j] == m){
                 std::cout << "Error u cant equip the same Materia !\n";
                 return ;
-            }
-
+            }   
         }
         if (!inv[i]){
             inv[i] = m->clone();
@@ -77,7 +77,7 @@ void Character::equip(AMateria* m){
 }
 
 void Character::unequip(int idx){
-    if ((idx > 3 || idx < 0) && inv[idx]){
+    if (!(idx >= 0 && idx <= 3) && inv[idx]){
         std::cout << "Invalid Idx !\n"; 
         return ;
     }

@@ -3,9 +3,9 @@
 
 #include "IMateriaSource.hpp"
 class MateriaSource : public IMateriaSource {
-    private:
-    AMateria* learned[4];
+    // private:
     public:
+    AMateria* learned[4];
     MateriaSource();
     MateriaSource(MateriaSource const &obj);
     MateriaSource& operator=(MateriaSource const &obj);
