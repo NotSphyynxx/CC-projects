@@ -8,7 +8,7 @@
 
 Welcome to my **42 Common Core** repository. This repo contains all the projects I have completed during my curriculum at **1337** (part of the 42 Network).
 
-The 42 curriculum is a project-based peer-learning program. There are no teachers and no classes. We learn by reading documentation, coding, and peer-reviewing. This repository serves as an archive of my progress, covering everything from the C standard library to C++ Object-Oriented Programming and system administration.
+The 42 curriculum is a project-based peer-learning program. There are no teachers and no classes. We learn by reading documentation, coding, and peer-reviewing. This repository serves as an archive of my progress, covering everything from the C standard library to C++ Object-Oriented Programming, networking, and system administration.
 
 ---
 
@@ -37,15 +37,17 @@ The 42 curriculum is a project-based peer-learning program. There are no teacher
 | **[so_long](./so_long)** | A small 2D game using MinilibX. Handles textures, maps, and events (WASD). | C / GFX | ✅ |
 | **[pipex](./pipex)** | Mimicking the behavior of the shell pipe `\|` and redirections. | C / Unix | ✅ |
 
-### Rank 3: Concurrency
+### Rank 3: Processes & Concurrency
 | Project | Description | Stack | Status |
 | :--- | :--- | :---: | :---: |
+| **[Minishell](https://github.com/NotSphyynxx/Minishell)** | As beautiful as a shell. Creating a simple bash-like shell. Parsing, redirections, pipes, signals, and env management. | C / Unix | ✅ |
 | **[Philo](./Philo)** | The Dining Philosophers problem. Introduction to Multi-threading, Mutexes, and Deadlocks. | C / Threads | ✅ |
 
-### Rank 4: C++ & OOP
+### Rank 4: C++ & Networking
 | Project | Description | Focus | Status |
 | :--- | :--- | :---: | :---: |
 | **[Cpp00-04](./Cpp0-4)** | Introduction to C++98. | Classes, Polymorphism, Inheritance | ✅ |
+| **[NetPractice](./NetPractice)** | Configuring small-scale networks. Training on TCP/IP addressing, subnetting, routing tables, and the OSI model. | Networking / SysAdmin | ✅ |
 
 ---
 
