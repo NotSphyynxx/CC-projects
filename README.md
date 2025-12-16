@@ -47,6 +47,7 @@ The 42 curriculum is a project-based peer-learning program. There are no teacher
 | Project | Description | Focus | Status |
 | :--- | :--- | :---: | :---: |
 | **[Cpp00-04](./Cpp0-4)** | Introduction to C++98. | Classes, Polymorphism, Inheritance | ✅ |
+| **[cub3d](https://github.com/zakaria-jaddad/ft_cube)** | A "realistic" 3D graphical representation of the inside of a maze using Ray-Casting. | Graphics / Raycasting / Math | ✅ |
 | **[NetPractice](./NetPractice)** | Configuring small-scale networks. Training on TCP/IP addressing, subnetting, routing tables, and the OSI model. | Networking / SysAdmin | ✅ |
 
 ---
