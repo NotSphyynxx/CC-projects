@@ -1,6 +1,10 @@
 #ifndef CONVERSION_HPP
 #define CONVERSION_HPP
 #include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <climits>
+#include <iomanip>
 
 
 class ScalarConverter {
@@ -10,7 +14,7 @@ class ScalarConverter {
 	ScalarConverter& operator=(const ScalarConverter& obj);
 	~ScalarConverter();
 	public:
-	static void convert(std::string& literal)
+	static void convert(const std::string& literal);
 };
 
 
