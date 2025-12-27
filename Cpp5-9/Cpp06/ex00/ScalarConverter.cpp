@@ -103,6 +103,4 @@ void ScalarConverter::convert(const std::string& literal){
 	print_int(num);
 	print_float(num);
 	print_double(num);
-
-
 }
