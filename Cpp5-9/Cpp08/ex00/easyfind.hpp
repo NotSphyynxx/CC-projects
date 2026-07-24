@@ -1,3 +1,6 @@
+#ifndef EASY_FIND_HPP
+#define EASY_FIND_HPP
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -7,7 +10,6 @@ class NotFound : public std::exception {
 };
 
 template <typename T> 
-
 typename T::iterator EasyFind(T &container, int num)
 {
     typename T::iterator it;
@@ -18,3 +20,5 @@ typename T::iterator EasyFind(T &container, int num)
     else
         return it;
 }
+
+#endif
