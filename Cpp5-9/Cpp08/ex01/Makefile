@@ -1,14 +1,14 @@
-NAME = ex00
+NAME = ex01
 
 CC = c++
 
 RM = rm -rf
 
-CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SOURCES = main.cpp
+SOURCES = main.cpp Span.cpp
 
-INCLUDES = easyfind.hpp
+INCLUDES = Span.hpp
 
 OBJ = $(SOURCES:.cpp=.opp)
 
