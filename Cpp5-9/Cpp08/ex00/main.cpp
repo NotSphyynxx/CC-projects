@@ -15,7 +15,7 @@ int main(){
         v.push_back(40);
         v.push_back(50);
         // std::cout  << "Vector Cap: "<< v.capacity() << "\n" << "Vector Size: "<< v.size() << std::endl;
-        std::vector<int>::iterator it = EasyFind(v, 40);
+        std::vector<int>::iterator it = easyFind(v, 40);
         std::cout << "Value Found !! : " << *it << std::endl;
     }
     catch (std::exception &except){
@@ -23,7 +23,7 @@ int main(){
     }
     // WITH ERROR
         try {
-        std::vector<int>::iterator it = EasyFind(v, 70);
+        std::vector<int>::iterator it = easyFind(v, 70);
         std::cout << "Value Found !! : " << *it << std::endl;
     }
     catch (std::exception &except){

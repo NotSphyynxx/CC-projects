@@ -10,7 +10,7 @@ class NotFound : public std::exception {
 };
 
 template <typename T> 
-typename T::iterator EasyFind(T &container, int num)
+typename T::iterator easyFind(T &container, int num)
 {
     typename T::iterator it;
 
