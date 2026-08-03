@@ -1,10 +1,10 @@
 #include "BitcoinExchange.hpp"
 
-int main(){
+int main(int ac, char **av){
+    if (ac != 2)
+        return 1;
     BitcoinExchange sphynx;
     sphynx.loadDatabase("data.csv");
-    std::map<std::string, double>::iterator it;
-    for (it = sphynx.db.begin(); it != sphynx.db.end(); ++it) {
-        std::cout << "Date: " << it->first << " | Prix: " << it->second << "\n";
-    }
+    sphynx.parseInput(av[1]);
+    return 0;
 }

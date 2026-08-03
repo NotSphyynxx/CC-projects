@@ -11,15 +11,15 @@ class BitcoinExchange {
     public:
     std::map<std::string, double> db;
 
-    // BitcoinExchange();
-    // BitcoinExchange(const BitcoinExchange &obj);
-    // ~BitcoinExchange();
-    // BitcoinExchange &operator=(const BitcoinExchange &obj);
+    BitcoinExchange();
+    BitcoinExchange(const BitcoinExchange &obj);
+    ~BitcoinExchange();
+    BitcoinExchange &operator=(const BitcoinExchange &obj);
 
-    bool isValidDate(std::string &date);
+    bool isValidDate(std::string &date) const;
     bool isValidValue(std::string &bitc, double &final_value) const;
 
-    // int getExchangeRate(std::string &date) const;
+    double getExchangeRate(std::string &date) const;
 
     void    loadDatabase(const std::string &filename);
     void    parseInput(const std::string &filename);
