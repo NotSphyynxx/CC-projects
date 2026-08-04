@@ -1,4 +1,4 @@
-NAME = RPN
+NAME = PmergeMe
 
 CC = c++
 
@@ -6,9 +6,9 @@ RM = rm -rf
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SOURCES = main.cpp RPN.cpp
+SOURCES = main.cpp PmergeMe.cpp
 
-INCLUDES = RPN.hpp
+INCLUDES = PmergeMe.hpp
 
 OBJ = $(SOURCES:.cpp=.opp)
 
