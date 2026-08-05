@@ -16,15 +16,15 @@ class PmergeMe {
     
 
     void fordJohnsonVector(std::vector<int>& arr);
-    // void fordJohnsonDeque(std::deque<int>& arr);
+    void fordJohnsonDeque(std::deque<int>& arr);
 
     std::vector<int> generateJacobsthal(size_t size);
 
     public:
-    // PmergeMe();
-    // ~PmergeMe();
-    // PmergeMe(const PmergeMe &obj);
-    // PmergeMe &operator=(const PmergeMe &obj);
+    PmergeMe();
+    ~PmergeMe();
+    PmergeMe(const PmergeMe &obj);
+    PmergeMe &operator=(const PmergeMe &obj);
 
     void process(int ac, char **av);
     bool parseArguments(int ac, char **av);

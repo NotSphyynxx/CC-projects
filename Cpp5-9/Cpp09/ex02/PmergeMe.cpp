@@ -1,5 +1,25 @@
 #include "PmergeMe.hpp"
 
+PmergeMe::PmergeMe(){
+
+}
+
+PmergeMe::PmergeMe(const PmergeMe &obj){
+    *this = obj;
+}
+
+PmergeMe::~PmergeMe(){
+
+}
+
+PmergeMe &PmergeMe::operator=(const PmergeMe &obj){
+    if (this != &obj){
+        this->vec = vec;
+        this->deq = deq;
+    }
+        return *this;
+}
+
 static double calculateTime(struct timeval start, struct timeval end) {
     return (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
 }
@@ -21,13 +41,13 @@ void PmergeMe::process(int ac, char **av) {
 
     double time_vec = calculateTime(start_vec, end_vec);
 
-    // //benchmark deque
-    // struct timeval start_deq, end_deq;
-    // gettimeofday(&start_deq, NULL);
-    // fordJohnsonDeque(deq);
-    // gettimeofday(&end_deq, NULL);
+    //benchmark deque
+    struct timeval start_deq, end_deq;
+    gettimeofday(&start_deq, NULL);
+    fordJohnsonDeque(deq);
+    gettimeofday(&end_deq, NULL);
 
-    // double time_deq = calculateTime(start_vec, end_vec);
+    double time_deq = calculateTime(start_vec, end_vec);
 
     std::cout << "After: ";
     for (size_t i = 0; i < vec.size(); i++)
@@ -37,8 +57,8 @@ void PmergeMe::process(int ac, char **av) {
     std::cout << "Time to process a range of " << vec.size()
               << " element with std::vector : " << time_vec << " us\n";
     
-    // std::cout << "Time to process a range of " << deq.size()
-    //           << " element with std::deque : " << time_deq << " us\n";
+    std::cout << "Time to process a range of " << deq.size()
+              << " element with std::deque : " << time_deq << " us\n";
 }
 
 bool PmergeMe::parseArguments(int ac, char **av) {
@@ -171,4 +191,63 @@ std::vector<int> PmergeMe::generateJacobsthal(size_t size){
         j1 = next;
     }
     return jacob;
+}
+
+void PmergeMe::fordJohnsonDeque(std::deque<int>& arr){
+    if (arr.size() < 2)
+        return ;
+    int straggler_value = 0;
+    bool has_straggler = false;
+    if (arr.size() % 2 != 0){
+        straggler_value = arr.back();
+        has_straggler = true;
+        arr.pop_back();
+    }
+
+    std::deque<std::pair<int, int> > pairs;
+    for (size_t i = 0; i < arr.size(); i += 2){
+        int winner = arr[i];
+        int loser = arr[i + 1];
+        if (winner < loser)
+            std::swap(winner, loser);
+        pairs.push_back(std::make_pair(winner, loser));
+    }
+
+    std::deque<int> winners;
+    for (size_t i = 0; i < pairs.size(); i++){
+        winners.push_back(pairs[i].first);
+    }
+    std::deque<int> mainChain;
+    std::deque<int> pend;
+    std::deque<bool> used(pairs.size(), false);
+
+    for (size_t i = 0; i < winners.size(); i++){
+        for (size_t j = 0; j < pairs.size(); j++){
+            if (!used[j] && pairs[j].first == winners[i]){
+                used[j] = true;
+                mainChain.push_back(winners[i]);
+                pend.push_back(pairs[j].second);
+                break ;
+            }
+        }
+    }
+    if (has_straggler)
+        pend.push_back(straggler_value);
+
+    mainChain.insert(mainChain.begin(), pend[0]);
+    std::vector<int> jacob = generateJacobsthal(pend.size());
+
+    int lastPos = 1;
+
+    for (size_t i = 1;i < jacob.size();i++){
+        int currPos = jacob[i];
+        for (int j = currPos;j > lastPos; j--){
+            int elementToInsert = pend[j - 1];
+
+            std::deque<int>::iterator it = std::lower_bound(mainChain.begin(), mainChain.end(), elementToInsert);
+            mainChain.insert(it, elementToInsert);
+        }
+        lastPos = currPos;
+    };
+    arr = mainChain;
 }
