@@ -14,8 +14,8 @@ PmergeMe::~PmergeMe(){
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &obj){
     if (this != &obj){
-        this->vec = vec;
-        this->deq = deq;
+        vec = obj.vec;
+        deq = obj.deq;
     }
         return *this;
 }
