@@ -53,7 +53,7 @@ The 42 curriculum is a project-based peer-learning program. There are no teacher
 ### Rank 5: Advanced C++ & Infrastructure
 | Project | Description | Focus | Status |
 | :--- | :--- | :---: | :---: |
-| **[Cpp05-08](./Cpp05-08)** | Advanced C++98 (Exceptions, Templates, and the STL). | Classes / STL | 🔄 |
+| **[Cpp05-09](./Cpp05-08)** | Advanced C++98 (Exceptions, Templates, and the STL). | Classes / STL | 🔄 |
 | **[Inception](https://github.com/NotSphyynxx/Inception)** | System administration. Virtualizing Docker containers and setting up a LEMP stack. | Docker / SysAdmin | ✅ |
 | **[ft_irc](https://github.com/NotSphyynxx/ft_irc)** | Writing an IRC server in C++98. Sockets, multiplexing, and client/server architecture. | C++ / Networking | ✅ |
 
